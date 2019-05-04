@@ -8,16 +8,15 @@
 
 ![](https://github.com/qingmei2/MVI-Rhine-Template/blob/master/screenshots/savepath.png)
 
-* MVVMActTemplate -> activities
-* MVVMFrgTemplate -> other
+* MVIActTemplate -> activities
+* MVIFrgTemplate -> other
 
 2.新建容器时，通过AndroidStudio的模板新建系列文件：
 
-![](https://github.com/qingmei2/MVVMRhine-Template/blob/master/screenshots/usage1.png)
+![](https://github.com/qingmei2/MVI-Rhine-Template/blob/master/screenshots/usage1.png)
 
-![](https://github.com/qingmei2/MVVMRhine-Template/blob/master/screenshots/usage2.png)
+![](https://github.com/qingmei2/MVI-Rhine-Template/blob/master/screenshots/usage2.png)
 
 3.新建成功，AndroidStudio 同步完成后即可编码：
 
-![](https://github.com/qingmei2/MVVMRhine-Template/blob/master/screenshots/usage3.png)
-
+![](https://github.com/qingmei2/MVI-Rhine-Template/blob/master/screenshots/usage3.png)
