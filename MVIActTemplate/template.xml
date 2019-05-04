@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<template name="Basic Activity for MVI-Rhine" description="Creates a new Activity of MVI-Rhine."
+	format="5" minApi="16" minBuildApi="8" revision="3">
+
+	<category value="Activity" />
+
+	<parameter name="Package name" constraints="package" default="com.mycompany.myapp"
+		id="packageName" type="string" />
+
+	<parameter name="Object Kind" constraints="nonempty" default="Item"
+		help="Other examples are 'Person', 'Book', etc." id="objectKind" type="string" />
+
+	<parameter name="Activity class name" constraints="nonempty|class|unique" default="ItemActivity"
+		id="className" suggest="${extractLetters(objectKind)}Activity" type="string" />
+
+	<parameter name="layout file name" constraints="layout|nonempty|unique" default="activity_my"
+		id="activity_layout" suggest="${activityToLayout(className)}" type="string" />
+
+	<parameter name="ViewModel class name" constraints="nonempty|class|unique" default="MyViewModel"
+		id="viewModelClass" suggest="${extractLetters(objectKind)}ViewModel" type="string"
+		visibility="true" />
+
+	<parameter name="Kodein module name" constraints="nonempty|class|unique"
+		default="myKodeinModule" id="kodeinModuleName"
+		suggest="${extractLetters(objectKind?lower_case)}KodeinModule" type="string"
+		visibility="true" />
+
+	<!--Intent\ViewState\Action\Result\ProcessorHolder-->
+	<parameter name="Intent class name" constraints="nonempty|class|unique" default="DefaultIntent"
+		id="intentClass" suggest="${extractLetters(objectKind)}Intent" type="string"
+		visibility="false" />
+	<parameter name="ViewState class name" constraints="nonempty|class|unique"
+		default="DefaultViewState" id="viewStateClass"
+		suggest="${extractLetters(objectKind)}ViewState" type="string" visibility="false" />
+	<parameter name="Action class name" constraints="nonempty|class|unique" default="DefaultAction"
+		id="actionClass" suggest="${extractLetters(objectKind)}Action" type="string"
+		visibility="false" />
+	<parameter name="Result class name" constraints="nonempty|class|unique" default="DefaultResult"
+		id="resultClass" suggest="${extractLetters(objectKind)}Result" type="string"
+		visibility="false" />
+	<parameter name="ProcessorHolder class name" constraints="nonempty|class|unique"
+		default="DefaultProcessorHolder" id="processorHolderClass"
+		suggest="${extractLetters(objectKind)}ActionProcessorHolder" type="string" visibility="false"/>
+
+	<parameter name="DataSourceRepository class name" constraints="nonempty|class|unique"
+		default="MyDataSourceRepository" id="dataSourceRepositoryName"
+		suggest="${extractLetters(objectKind)}DataSourceRepository" type="string"
+		visibility="false" />
+	<parameter name="RemoteDataSource class name" constraints="nonempty|class|unique"
+		default="MyRemoteDataSource" id="remoteDataSourceName"
+		suggest="${extractLetters(objectKind)}RemoteDataSource" type="string" visibility="false" />
+	<parameter name="LocalDataSource class name" constraints="nonempty|class|unique"
+		default="MyLocalDataSource" id="localDataSourceName"
+		suggest="${extractLetters(objectKind)}LocalDataSource" type="string" visibility="false" />
+
+	<!-- 128x128 thumbnails relative to template.xml -->
+	<thumbs>
+		<!-- default thumbnail is required -->
+		<thumb>templates_activity.png</thumb>
+	</thumbs>
+
+
+	<globals file="globals.xml.ftl" />
+	<execute file="recipe.xml.ftl" />
+
+</template>
