@@ -80,7 +80,4 @@ class ${viewModelClass}Factory(
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
         ${viewModelClass}(actionProcessorHolder) as T
-
-    companion object :
-        SingletonHolderSingleArg<${viewModelClass}Factory, ${processorHolderClass}>(::${viewModelClass}Factory)
 }

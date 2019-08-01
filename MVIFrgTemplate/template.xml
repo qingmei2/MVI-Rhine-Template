@@ -20,11 +20,6 @@
 		id="viewModelClass" suggest="${extractLetters(objectKind)}ViewModel" type="string"
 		visibility="true" />
 
-	<parameter name="Kodein module name" constraints="nonempty|class|unique"
-		default="myKodeinModule" id="kodeinModuleName"
-		suggest="${extractLetters(objectKind?lower_case)}KodeinModule" type="string"
-		visibility="true" />
-
 	<!--Intent\ViewState\Action\Result\ProcessorHolder-->
 	<parameter name="Intent class name" constraints="nonempty|class|unique" default="DefaultIntent"
 		id="intentClass" suggest="${extractLetters(objectKind)}Intent" type="string"

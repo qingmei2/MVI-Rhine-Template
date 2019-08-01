@@ -12,8 +12,8 @@
     <instantiate from="root/src/app_package/BasicActivityViewModel.${ktOrJavaExt}.ftl"
                  to="${escapeXmlAttribute(srcOut)}/${viewModelClass}.kt" />
 
-    <instantiate from="root/src/app_package/BasicActivityKodeinModule.${ktOrJavaExt}.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/${extractLetters(objectKind)}KodeinModule.kt" />
+    <instantiate from="root/src/app_package/BasicActivityModule.${ktOrJavaExt}.ftl"
+                 to="${escapeXmlAttribute(srcOut)}/${className}Module.kt" />
 
     <instantiate from="root/src/app_package/BasicAction.${ktOrJavaExt}.ftl"
                  to="${escapeXmlAttribute(srcOut)}/${actionClass}.kt" />

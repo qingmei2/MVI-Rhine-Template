@@ -1,8 +1,7 @@
 package ${kotlinEscapedPackageName}
 
 import android.os.Bundle
-import org.kodein.di.Kodein
-import org.kodein.di.generic.instance
+import javax.inject.Inject
 import com.uber.autodispose.autoDisposable
 import io.reactivex.Observable
 import com.github.qingmei2.mvi.base.view.activity.BaseActivity
@@ -12,12 +11,8 @@ import ${applicationPackage}.R
 
 class ${className} : BaseActivity<${intentClass}, ${viewStateClass}>() {
 
-    override val kodein: Kodein = Kodein.lazy {
-        extend(parentKodein)
-        import(${kodeinModuleName})
-    }
-
-    private val mViewModel: ${viewModelClass} by instance()
+    @Inject
+    lateinit var mViewModel: ${viewModelClass}
 
     override val layoutId: Int = R.layout.${activity_layout}
 
